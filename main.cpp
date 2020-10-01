@@ -12,14 +12,15 @@ void endl(int n = 1) {
 }
 
 vector<int> get_nodes(int node, vector< vector<int> > matrix) {
-    return  matrix.at((node - 1) );
+    vector<int> result = matrix.at((node - 1) );
+    return result;
 }
 
 bool existInMOM(int value, vector<int> MoM) {
     return std::find(MoM.begin(), MoM.end(), value) != MoM.end();
 }
 
-vector<int> tree(int start_node, vector< vector<int> > matrix, vector<int> memory_of_forgetting ) {
+vector<int> tree(int start_node, const vector< vector<int> > matrix, vector<int> memory_of_forgetting ) {
     vector<int> founds;
 
     try {
@@ -31,16 +32,17 @@ vector<int> tree(int start_node, vector< vector<int> > matrix, vector<int> memor
 
     memory_of_forgetting.push_back(start_node);
 
-    vector<int> nodes = get_nodes(start_node, matrix);
+    vector<int> nodes = matrix.at((start_node - 1) );//get_nodes(start_node, matrix);
 
-    for (int i = 0; i < nodes.size(); ++i) {
+    for (int i = 0; i < nodes.size(); i++) {
         if (nodes.at(i) != 0 ) {
             if ( (!existInMOM(i+1, memory_of_forgetting))  && (i+1 == last_node) ) {
                 int size = static_cast<int>(memory_of_forgetting.size());
                 founds.push_back(size);
             } else if (!existInMOM(i+1, memory_of_forgetting)) {
                 vector<int> newMoM = memory_of_forgetting;
-                vector<int> foundsNew =  tree(i+1, matrix, newMoM);
+
+                vector<int> foundsNew = tree(i+1, matrix, newMoM);
                 for (int i = 0; i < foundsNew.size(); i++) {
                     founds.push_back(foundsNew.at(i));
                 }
