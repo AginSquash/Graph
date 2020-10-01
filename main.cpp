@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -31,6 +32,7 @@ vector<int> tree(const int start_node, const vector< vector<int> > matrix, vecto
     } catch (int a) { }
 
     memory_of_forgetting.push_back(start_node);
+
 
     vector<int> nodes = matrix.at((start_node - 1) );//get_nodes(start_node, matrix);
 
