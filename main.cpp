@@ -20,11 +20,11 @@ bool existInMOM(int value, vector<int> MoM) {
     return std::find(MoM.begin(), MoM.end(), value) != MoM.end();
 }
 
-vector<int> tree(int start_node, const vector< vector<int> > matrix, vector<int> memory_of_forgetting ) {
+vector<int> tree(const int start_node, const vector< vector<int> > matrix, vector<int> memory_of_forgetting ) {
     vector<int> founds;
 
     try {
-        if (memory_of_forgetting.size() > 1) {
+        if (memory_of_forgetting.size() > 0) {
             memory_of_forgetting.erase(memory_of_forgetting.begin(), memory_of_forgetting.begin() + 1);
         }
 
