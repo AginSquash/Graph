@@ -12,34 +12,36 @@ void endl(int n = 1) {
     }
 }
 
-bool existInMOM(int value, vector<int> MoM) {
-    return std::find(MoM.begin(), MoM.end(), value) != MoM.end();
+bool existInP2N(int value, vector<int> P2N) {
+    return std::find(P2N.begin(), P2N.end(), value) != P2N.end();
 }
 
-vector<int> tree(const int start_node, const vector< vector<int> > matrix, vector<int> memory_of_forgetting ) {
-    vector<int> founds;
+vector<int> tree(const int start_node, const vector< vector<int> > matrix, vector<int> path_to_current_node ) {
+    vector<int> founded;
 
-    memory_of_forgetting.push_back(start_node);
+    path_to_current_node.push_back(start_node);
 
     vector<int> nodes = matrix.at((start_node - 1) );
 
     for (int i = 0; i < nodes.size(); i++) {
         if (nodes.at(i) != 0 ) {
-            if ( (!existInMOM(i+1, memory_of_forgetting))  && (i+1 == last_node) ) {
-                int size = static_cast<int>(memory_of_forgetting.size());
-                founds.push_back(size);
-            } else if (!existInMOM(i+1, memory_of_forgetting)) {
-                vector<int> newMoM = memory_of_forgetting;
+            if ((!existInP2N(i+1, path_to_current_node)) && (i + 1 == last_node) ) {
 
-                vector<int> foundsNew = tree(i+1, matrix, newMoM);
-                for (int i = 0; i < foundsNew.size(); i++) {
-                    founds.push_back(foundsNew.at(i));
-                }
+                int size = static_cast<int>(path_to_current_node.size());
+                founded.push_back(size);
+
+            } else if (!existInP2N(i+1, path_to_current_node)) {
+
+                vector<int> p2n_copy = path_to_current_node;
+                vector<int> foundedFromNewTree = tree(i+1, matrix, p2n_copy);
+
+                founded.insert(founded.end(), foundedFromNewTree.begin(), foundedFromNewTree.end());
+
             } else { continue; }
         } else { continue; }
 
     }
-    return  founds;
+    return founded;
 }
 
 
@@ -51,41 +53,30 @@ int main() {
 
 
     n = 6;
-
+#ifdef DEBUG
     vector< vector<int> > matrix = { {0,1,0,0,1,0},
                                      {1,0,1,0,1,0},
                                      {0,1,0,1,0,0},
                                      {0,0,1,0,0,0},
                                      {1,1,0,0,0,0},
                                      {0,0,0,0,0,0} };
+#else
 
-
-/*
- *  vector< vector<int> > matrix = { {0, 1, 0, 1},
-                                     {0, 0, 1, 1},
-                                     {0, 1, 0, 0},
-                                     {1, 0, 1, 0} };
- *
- *
     vector< vector<int> > matrix;
     matrix.assign(n, vector<int>(n));
 
-
     for (int i = 0; i < n; i++) {
 
-        cout << "Введите массив чисел: ";
-
+        cout << "Введите массив чисел через пробел: ";
         for (int j = 0; j < n; j++) {
             int num;
             cin >> num;
             matrix.at(i).at(j) = num;
-            //matrix[i][j] = num;
         }
 
     }
 
-    */
-
+#endif
 
     endl();
 
