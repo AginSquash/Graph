@@ -7,30 +7,44 @@ using namespace std;
 int last_node = 0;
 
 void endl(int n = 1) {
+    /*
+     *  Печатает пустые строки. Just for beauty
+     */
     for (int i = 0; i < n; ++i) {
         cout << endl;
     }
 }
 
-bool existInP2N(int value, vector<int> P2N) {
-    return std::find(P2N.begin(), P2N.end(), value) != P2N.end();
+
+bool existInVector(int value, vector<int> vector) {
+    /*
+     * Функция проверяет есть ли значение value в векторе vector
+     */
+    return std::find(vector.begin(), vector.end(), value) != vector.end();
 }
 
 vector<int> tree(const int start_node, const vector< vector<int> > matrix, vector<int> path_to_current_node ) {
     vector<int> founded;
 
+    // Добавляем в путь стартовую вершину
     path_to_current_node.push_back(start_node);
 
+    // Получаем строку матрицы, в зависимости от вершины
     vector<int> nodes = matrix.at((start_node - 1) );
 
+    // Проверяем все вершины nodes данного уровня дерева
     for (int i = 0; i < nodes.size(); i++) {
+        // Если элемент матрицы равен нулю, пути нет
         if (nodes.at(i) != 0 ) {
-            if ((!existInP2N(i+1, path_to_current_node)) && (i + 1 == last_node) ) {
+            // Если вершина не в пути и является начальной вершиной, то это и есть цикл
+            if ((!existInVector(i+1, path_to_current_node)) && (i + 1 == last_node) ) {
 
                 int size = static_cast<int>(path_to_current_node.size());
                 founded.push_back(size);
 
-            } else if (!existInP2N(i+1, path_to_current_node)) {
+                // Если вершины нет в пути, но она не является начальной вершиной, то начинаем строить
+                // дерево от этой вершины, запоминая пройденные вершины
+            } else if (!existInVector(i+1, path_to_current_node)) {
 
                 vector<int> p2n_copy = path_to_current_node;
                 vector<int> foundedFromNewTree = tree(i+1, matrix, p2n_copy);
