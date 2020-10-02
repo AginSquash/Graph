@@ -118,9 +118,15 @@ int main() {
         vector<int> MoM;
         vector<int> result = tree(start_node, matrix, MoM);
 
-        for (int i = 0; i < result.size(); ++i) {
-            cout << result.at(i);
+        if (result.size() == 0) {
+            cout << "Пути нет" << endl;
         }
+
+        int max = *std::max_element(result.begin(), result.end());
+        int min = *std::min_element(result.begin(), result.end());
+
+        cout << "Минимум: " << min << endl;
+        cout << "Максимум: " << max << endl;
     }
 
     return 0;
