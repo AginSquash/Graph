@@ -1,3 +1,7 @@
+//
+//  Created by Vlad Vrublevsky on 02.10.2020.
+//
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -61,13 +65,8 @@ vector<int> tree(const int start_node, const vector< vector<int> > matrix, vecto
 
 int main() {
 
-    std::cout << "Введите число вершин: ";
-    int n;
-    std::cin >> n;
-
-
-    n = 6;
 #ifdef DEBUG
+    n = 6;
     vector< vector<int> > matrix = { {0,1,0,0,1,0},
                                      {1,0,1,0,1,0},
                                      {0,1,0,1,0,0},
@@ -75,6 +74,9 @@ int main() {
                                      {1,1,0,0,0,0},
                                      {0,0,0,0,0,0} };
 #else
+    std::cout << "Введите число вершин: ";
+    int n;
+    std::cin >> n;
 
     vector< vector<int> > matrix;
     matrix.assign(n, vector<int>(n));
@@ -89,7 +91,6 @@ int main() {
         }
 
     }
-
 #endif
 
     endl();
