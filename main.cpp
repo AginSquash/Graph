@@ -6,6 +6,7 @@
 #include <vector>
 #include <algorithm>
 
+
 using namespace std;
 
 int last_node = 0;
@@ -66,12 +67,12 @@ vector<int> tree(const int start_node, const vector< vector<int> > matrix, vecto
 int main() {
 
 #ifdef DEBUG
-    n = 6;
-    vector< vector<int> > matrix = { {0,1,0,0,1,0},
-                                     {1,0,1,0,1,0},
-                                     {0,1,0,1,0,0},
-                                     {0,0,1,0,0,0},
-                                     {1,1,0,0,0,0},
+    int n = 6;
+    vector< vector<int> > matrix = { {0,1,0,0,0,0},
+                                     {0,0,1,0,1,0},
+                                     {0,0,0,1,0,0},
+                                     {0,0,0,0,0,0},
+                                     {1,0,0,0,0,0},
                                      {0,0,0,0,0,0} };
 #else
     std::cout << "Введите число вершин: ";
@@ -126,6 +127,7 @@ int main() {
 
         if (result.size() == 0) {
             cout << "Пути нет" << endl;
+            return 0;
         }
 
         int max = *std::max_element(result.begin(), result.end());
