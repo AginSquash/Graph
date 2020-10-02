@@ -12,11 +12,6 @@ void endl(int n = 1) {
     }
 }
 
-vector<int> get_nodes(int node, vector< vector<int> > matrix) {
-    vector<int> result = matrix.at((node - 1) );
-    return result;
-}
-
 bool existInMOM(int value, vector<int> MoM) {
     return std::find(MoM.begin(), MoM.end(), value) != MoM.end();
 }
@@ -24,17 +19,9 @@ bool existInMOM(int value, vector<int> MoM) {
 vector<int> tree(const int start_node, const vector< vector<int> > matrix, vector<int> memory_of_forgetting ) {
     vector<int> founds;
 
-    try {
-        if (memory_of_forgetting.size() > 0) {
-            memory_of_forgetting.erase(memory_of_forgetting.begin(), memory_of_forgetting.begin() + 1);
-        }
-
-    } catch (int a) { }
-
     memory_of_forgetting.push_back(start_node);
 
-
-    vector<int> nodes = matrix.at((start_node - 1) );//get_nodes(start_node, matrix);
+    vector<int> nodes = matrix.at((start_node - 1) );
 
     for (int i = 0; i < nodes.size(); i++) {
         if (nodes.at(i) != 0 ) {
