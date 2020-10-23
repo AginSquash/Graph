@@ -5,13 +5,15 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <sstream>
 
 //#define neorient //orient
 
 
 using namespace std;
 
-int last_node = 0;
+int first_node = 0;
+vector<std::string> global_cycles;
 
 void endl(int n = 1) {
     /*
@@ -30,11 +32,25 @@ bool existInVector(int value, vector<int> vector) {
     return std::find(vector.begin(), vector.end(), value) != vector.end();
 }
 
-vector<int> tree(const int start_node, const vector< vector<int> > matrix, vector<int> path_to_current_node ) {
+void addVector2globalCycles(vector<int> vector) {
+    sort(vector.begin(), vector.end());
+    std::ostringstream oss;
+    std::copy(vector.begin(), vector.end()-1,
+              std::ostream_iterator<int>(oss, ""));
+    oss << vector.back();
+    global_cycles.push_back(oss.str());
+}
+
+vector<int> tree(const int start_node, const vector< vector<int> > matrix, int tree_level = 0, vector<int> path_to_current_node = vector<int>()) {
     vector<int> founded;
+    tree_level += 1;
+
+    if (tree_level > 2) {
+        path_to_current_node.erase(std::remove(std::begin(path_to_current_node), std::end(path_to_current_node), first_node), std::end(path_to_current_node));
+    }
 
     // Добавляем в путь стартовую вершину
-    path_to_current_node.push_back(start_node);
+    path_to_current_node.push_back(first_node);
 
     // Получаем строку матрицы, в зависимости от вершины
     vector<int> nodes = matrix.at((start_node - 1) );
@@ -44,19 +60,18 @@ vector<int> tree(const int start_node, const vector< vector<int> > matrix, vecto
         // Если элемент матрицы равен нулю, пути нет
         if (nodes.at(i) != 0 ) {
             // Если вершина не в пути и является начальной вершиной, то это и есть цикл
-            if ((!existInVector(i+1, path_to_current_node)) && (i + 1 == last_node) ) {
+            if ((!existInVector(i+1, path_to_current_node)) && (i + 1 == first_node) ) {
 
-                int size = static_cast<int>(path_to_current_node.size());
-                founded.push_back(size);
+                addVector2globalCycles(path_to_current_node);
 
                 // Если вершины нет в пути, но она не является начальной вершиной, то начинаем строить
                 // дерево от этой вершины, запоминая пройденные вершины
             } else if (!existInVector(i+1, path_to_current_node)) {
 
                 vector<int> p2n_copy = path_to_current_node;
-                vector<int> foundedFromNewTree = tree(i+1, matrix, p2n_copy);
+                vector<int> foundedFromNewTree = tree(i+1, matrix, tree_level, p2n_copy);
 
-                founded.insert(founded.end(), foundedFromNewTree.begin(), foundedFromNewTree.end());
+                //founded.insert(founded.end(), foundedFromNewTree.begin(), foundedFromNewTree.end());
 
             } else { continue; }
         } else { continue; }
@@ -128,6 +143,7 @@ int main() {
 
     endl();
 
+    /*
     int start_node;
     cout << "Введите номер начальной вершины: ";
     cin >> start_node;
@@ -139,7 +155,7 @@ int main() {
     endl();
 
 
-    last_node = lasted_node;
+    start_node = lasted_node;
 
     if (start_node == lasted_node) {
         cout << 0 << endl;
@@ -158,6 +174,14 @@ int main() {
         cout << "Минимум: " << min << endl;
         cout << "Максимум: " << max << endl;
     }
+ */
+
+    for (int i = 1; i < n+1; ++i) {
+        first_node = i;
+        tree(i, matrix);
+    }
+    endl(2);
+    cout << global_cycles.size();
 
     return 0;
 }
