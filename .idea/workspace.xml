@@ -11,7 +11,31 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01d943cf-dba3-4d99-af32-4f5761892c11" name="Default Changelist" comment="" />
+    <list default="true" id="01d943cf-dba3-4d99-af32-4f5761892c11" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Graph/Graph.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Graph/Graph.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Graph/Graph.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Graph/Graph.xcodeproj/project.xcworkspace/xcuserdata/vladvrublevsky.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Graph/Graph.xcodeproj/xcuserdata/vladvrublevsky.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Graph/Graph/main.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cycles/Cycles.xcodeproj/project.xcworkspace/xcuserdata/vladvrublevsky.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/Cycles/Cycles.xcodeproj/project.xcworkspace/xcuserdata/vladvrublevsky.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/graph.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/graph" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/graph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/graph.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/graph.cbp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +85,8 @@
       <workItem from="1601717200553" duration="1988000" />
       <workItem from="1602796140689" duration="676000" />
       <workItem from="1603458295077" duration="2016000" />
+      <workItem from="1607431519998" duration="123000" />
+      <workItem from="1607431646161" duration="1693000" />
     </task>
     <servers />
   </component>
@@ -72,38 +98,42 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="1130" y="310" key="#xdebugger.evaluate/0.0.1920.1200@0.0.1920.1200" timestamp="1601574867727" />
-    <state width="1160" height="195" key="GridCell.Tab.0.bottom" timestamp="1603460785062">
+    <state width="1878" height="423" key="GridCell.Tab.0.bottom" timestamp="1607432657005">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1160" height="195" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1603460785062" />
-    <state width="1160" height="195" key="GridCell.Tab.0.center" timestamp="1603460785061">
+    <state width="1878" height="423" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1607432657005" />
+    <state width="1878" height="423" key="GridCell.Tab.0.center" timestamp="1607432657004">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1160" height="195" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1603460785061" />
-    <state width="1160" height="195" key="GridCell.Tab.0.left" timestamp="1603460785060">
+    <state width="1878" height="423" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1607432657004" />
+    <state width="1878" height="423" key="GridCell.Tab.0.left" timestamp="1607432657001">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1160" height="195" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1603460785060" />
-    <state width="1160" height="195" key="GridCell.Tab.0.right" timestamp="1603460785062">
+    <state width="1878" height="423" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1607432657001" />
+    <state width="1878" height="423" key="GridCell.Tab.0.right" timestamp="1607432657004">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1160" height="195" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1603460785062" />
-    <state width="1064" height="423" key="GridCell.Tab.1.bottom" timestamp="1601575368931">
+    <state width="1878" height="423" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1607432657004" />
+    <state width="1878" height="423" key="GridCell.Tab.1.bottom" timestamp="1607432657006">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1064" height="423" key="GridCell.Tab.1.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1601575368931" />
-    <state width="1064" height="423" key="GridCell.Tab.1.center" timestamp="1601575368930">
+    <state width="1878" height="423" key="GridCell.Tab.1.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1607432657006" />
+    <state width="1878" height="423" key="GridCell.Tab.1.center" timestamp="1607432657006">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1064" height="423" key="GridCell.Tab.1.center/0.0.1920.1200@0.0.1920.1200" timestamp="1601575368930" />
-    <state width="1064" height="423" key="GridCell.Tab.1.left" timestamp="1601575368930">
+    <state width="1878" height="423" key="GridCell.Tab.1.center/0.0.1920.1200@0.0.1920.1200" timestamp="1607432657006" />
+    <state width="1878" height="423" key="GridCell.Tab.1.left" timestamp="1607432657005">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1064" height="423" key="GridCell.Tab.1.left/0.0.1920.1200@0.0.1920.1200" timestamp="1601575368930" />
-    <state width="1064" height="423" key="GridCell.Tab.1.right" timestamp="1601575368931">
+    <state width="1878" height="423" key="GridCell.Tab.1.left/0.0.1920.1200@0.0.1920.1200" timestamp="1607432657005" />
+    <state width="1878" height="423" key="GridCell.Tab.1.right" timestamp="1607432657006">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state width="1064" height="423" key="GridCell.Tab.1.right/0.0.1920.1200@0.0.1920.1200" timestamp="1601575368931" />
+    <state width="1878" height="423" key="GridCell.Tab.1.right/0.0.1920.1200@0.0.1920.1200" timestamp="1607432657006" />
+    <state x="511" y="340" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1607432527832">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="511" y="340" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1200@0.0.1920.1200" timestamp="1607432527832" />
     <state x="919" y="187" width="837" height="825" key="find.popup" timestamp="1601565844679">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
