@@ -20,13 +20,12 @@ class Graph {
         self.chain = repeatElement(0, count: n).map( { Int($0) } )
     }
     
-    func SearchWay(b: Int, top: Int) -> Bool {
+    func SearchForWay(b: Int, top: Int) -> Bool {
         var k = false
         
         let index = index_chain
         for i in 0..<n {
             if matrix[n*(top - 1) + i] == false {
-                print("continue")
                 continue
             }
             if ( i+1 == b ) {
@@ -43,7 +42,7 @@ class Graph {
             }
             chain[index_chain] = i + 1
             index_chain += 1
-            if SearchWay(b: b, top: i+1) {
+            if SearchForWay(b: b, top: i+1) {
                 return true
             }
             index_chain = index
@@ -52,7 +51,7 @@ class Graph {
         return false
     }
     
-    func SearchExistWays() {
+    func SearchWays() {
         var counter: Int = 0
         var check: Bool = true
         var array: [Int] = [Int]()
@@ -71,7 +70,7 @@ class Graph {
                 }
                 chain[0] = i + 1
                 index_chain = 1
-                if SearchWay(b: j+1, top: i+1) {
+                if SearchForWay(b: j+1, top: i+1) {
                     array[j] = 0
                 }
             }
@@ -93,27 +92,34 @@ class Graph {
 }
 
 func main() {
+    /*
     print("Enter the number of grapth tops: ")
     guard let n = Int(readLine()!) else { fatalError("Number must be int!") }
     var matrix = [Bool]()
-    for _ in (0..<n) {
+    for _ in (0..<n*2) {
         matrix.append( contentsOf: readLine()!.split(separator: " ").map({ getBoolByString($0) }) )
     }
+    */
+    let n = 3
+    var intMatrix = [ 0, 1, 1, 1, 0, 0,
+                      1, 0, 0, 1, 1, 0,
+                      1, 0, 0, 1, 0, 1,
+                      1, 1, 1, 0, 1, 1,
+                      0, 1, 0, 1, 0, 0,
+                      0, 0, 1, 1, 0, 0]
     
-    for i in 0..<n {
-        for j in 0..<n {
-            if (matrix[n * i + j] == true) {
-                matrix[n * j + i] = matrix[n * i + j];
-            }
-        }
-    }
+    var matrix = intMatrix.map({ getBoolByInt($0) })
     
     let graph = Graph(n: n, matrix: matrix)
-    graph.SearchExistWays()
+    graph.SearchWays()
 }
 
 func getBoolByString(_ s: Substring) -> Bool {
     return s != "0"
+}
+
+func getBoolByInt(_ s: Int) -> Bool {
+    return s != 0
 }
 
 main()

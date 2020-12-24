@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <sstream>
 
-//#define neorient //orient
+//#define orient
 
 
 using namespace std;
