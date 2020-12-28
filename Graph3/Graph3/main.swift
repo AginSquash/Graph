@@ -55,7 +55,7 @@ class Graph {
     
     func SearchWays() {
         var connect_count: Int = 0
-        var check: Bool = true
+        var checked: Bool = true
         var array: [Int] = [Int]()
         
         for i in 0..<n {
@@ -80,15 +80,15 @@ class Graph {
             connect_count += 1
             for j in 0..<n {
                 if array[j] != 0 {
-                    check = false
+                    checked = false
                     break
                 }
             }
-            if check {
+            if checked {
                 break
             }
         }
-        print("Connetcive count: \(connect_count)")
+        print("Число компонент связности: \(connect_count)")
         
     }
 }
@@ -104,20 +104,22 @@ func main() {
     */
     let n = 6
     
+    /*
     let intMatrix = [ 0, 1, 1, 1, 0, 0,
                       1, 0, 0, 1, 1, 0,
                       1, 0, 0, 1, 0, 1,
                       1, 1, 1, 0, 1, 1,
                       0, 1, 0, 1, 0, 0,
                       0, 0, 1, 1, 0, 0]
-    /*
+ */
+    
      let intMatrix =  [0, 1, 0, 1, 0, 0,
                        0, 0, 0, 0, 1, 0,
                        1, 0, 0, 1, 0, 0,
                        0, 1, 0, 0, 1, 0,
                        0, 0, 0, 0, 0, 0,
                        0, 0, 1, 1, 0, 0]
-    */
+    
     
     let matrix = intMatrix.map({ getBoolByInt($0) })
     
