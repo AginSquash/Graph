@@ -53,15 +53,15 @@ func tree( startNode: Int, matrix: [[Int]], treeLevel: Int = 0, allreadyPassedPa
 
 func main() {
     print("Enter number of tops:")
-    /*
+    
     guard var n = Int(readLine()!) else { fatalError("Number must be int!") }
 
     var matrix = [[Int]]()
     for _ in (0..<n) {
         matrix.append( readLine()!.split(separator: " ").map({ Int($0)! }) )
     }
-    */
     
+        /*
     let n = 6
     let matrix: [[Int]] = [[0, 1, 1, 1, 0, 0],
                           [1, 0, 0, 1, 1, 0],
@@ -79,7 +79,7 @@ func main() {
                           [0, 0, 0, 0, 0, 0],
                           [0, 0, 1, 1, 0, 0]]
     */
-    
+    */
     
     addBeatyEnter()
     

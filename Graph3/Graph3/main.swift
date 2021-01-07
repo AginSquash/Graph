@@ -102,8 +102,24 @@ func main() {
         matrix.append( contentsOf: readLine()!.split(separator: " ").map({ getBoolByString($0) }) )
     }
     */
+    /*
     let n = 6
     
+    let intMatrix =  [0, 1, 0, 1, 0, 0,
+                      0, 0, 0, 0, 1, 0,
+                      1, 0, 0, 1, 0, 0,
+                      0, 1, 0, 0, 1, 0,
+                      0, 0, 0, 0, 0, 0,
+                      0, 0, 1, 1, 0, 0]
+    
+    */
+    
+    let n = 3
+    
+    let intMatrix = [0, 1, 0,
+                     1, 0, 0,
+                     0, 0, 0]
+
     /*
     let intMatrix = [ 0, 1, 1, 1, 0, 0,
                       1, 0, 0, 1, 1, 0,
@@ -111,14 +127,8 @@ func main() {
                       1, 1, 1, 0, 1, 1,
                       0, 1, 0, 1, 0, 0,
                       0, 0, 1, 1, 0, 0]
- */
-    
-     let intMatrix =  [0, 1, 0, 1, 0, 0,
-                       0, 0, 0, 0, 1, 0,
-                       1, 0, 0, 1, 0, 0,
-                       0, 1, 0, 0, 1, 0,
-                       0, 0, 0, 0, 0, 0,
-                       0, 0, 1, 1, 0, 0]
+ 
+    */
     
     
     let matrix = intMatrix.map({ getBoolByInt($0) })
